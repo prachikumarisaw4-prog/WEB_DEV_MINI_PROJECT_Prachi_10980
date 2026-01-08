@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meaningful Quotes</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 70%;
+      max-width: 500px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    #quote {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    #author {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <p id="quote">Click the button</p>
+  <p id="author"></p>
+  <button onclick="newQuote()">New Quote</button>
+</div>
+
+<script>
+  const quotes = [
+    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle" },
+    { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+    { text: "Happiness depends upon ourselves.", author: "Aristotle" },
+    { text: "What we think, we become.", author: "Buddha" },
+    { text: "Turn your wounds into wisdom.", author: "Oprah Winfrey" },
+    { text: "The unexamined life is not worth living.", author: "Socrates" },
+    { text: "Life can only be understood backwards; but it must be lived forwards.", author: "Søren Kierkegaard" },
+    { text: "Silence is a source of great strength.", author: "Lao Tzu" },
+    { text: "He who has a why to live can bear almost any how.", author: "Friedrich Nietzsche" },
+    { text: "We suffer more in imagination than in reality.", author: "Seneca" },
+    { text: "Act as if what you do makes a difference. It does.", author: "William James" },
+    { text: "Everything you can imagine is real.", author: "Pablo Picasso" },
+    { text: "Courage is resistance to fear, mastery of fear.", author: "Mark Twain" },
+    { text: "To improve is to change; to be perfect is to change often.", author: "Winston Churchill" },
+    { text: "The mind is everything. What you think you become.", author: "Buddha" },
+    { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" }
+  ];
+
+  function newQuote() {
+    let i = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[i].text;
+    document.getElementById("author").innerText = "- " + quotes[i].author;
+  }
+</script>
+
+</body>
+</html>
